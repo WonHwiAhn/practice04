@@ -36,5 +36,18 @@ public class BookShop {
 		displayBookInfo( books );
 	}
 
-
+	private static void displayBookInfo(Book[] books) {
+		//stateCode가 1이면 재고있음
+		//stateCode가 0이면 대여중
+		StringBuffer sb = new StringBuffer();
+		for(int i=0;i<books.length;i++) {
+			sb.append("책 제목: " + books[i].getTitle());
+			sb.append(", 작가: " + books[i].getAuthor());
+			if(books[i].getStateCode() == 1)
+				sb.append(", 대여 유무: 재고 있음\n");
+			else
+				sb.append(", 대여 유무: 대여중\n");
+		}
+		System.out.println(sb);
+	}
 }

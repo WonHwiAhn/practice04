@@ -1,23 +1,27 @@
 package prob03;
 
-public class DropShip {
+public class DropShip extends Unit{
 	// 현재 위치
 	private int x;
 	private int y; 
 	
 	void load() {
-		/* 선택된 대상을 태운다.*/ 
+		System.out.println("선택 대상을 태웠습니다.");
 	}
 	
 	void unload() {
-		/* 선택된 대상을 내린다.*/ 
+		System.out.println("선택 대상을 내렸습니다.");
 	}
 	
-	void move( int x, int y ) { 
-		/* 지정된 위치로 이동 */ 
+	@Override
+	void stop() {
+		// TODO Auto-generated method stub
+		System.out.println("드랍쉽 " + x + ", " + y + "로 이동중입니다.");
 	}
 	
-	void stop() { 
-		/* 현재 위치에 정지 */ 
-	}	
+	@Override
+	void move(int x, int y) {
+		// TODO Auto-generated method stub
+		System.out.println("드랍쉽이 " + x + ", " + y + "의 위치에서 정지하였습니다.");
+	}
 }
